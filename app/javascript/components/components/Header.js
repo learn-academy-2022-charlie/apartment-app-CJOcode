@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Nav, NavItem } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import applogo from '../assets/apartmentAppLogo.png'
+import './Header.scss'
 
 class Header extends Component {
   render() {
@@ -13,26 +16,40 @@ class Header extends Component {
     console.log("logged_in:", logged_in)
     console.log("current_user:", current_user)
     return (
-      <>
-        <h1>React in Rails with Devise</h1>
-        <Nav>
-          {logged_in &&
+      <header>
+        <Nav className='header-links'>
+            <img src={applogo} id='applogo' alt="applogo" />
+          
+            {logged_in &&
+              <NavItem>
+                <a href={sign_out_route} className="nav-link">Sign Out</a>
+              </NavItem>
+            }
+
+            {logged_in &&     
             <NavItem>
-              <a href={sign_out_route} className="nav-link">Sign Out</a>
+              <NavLink to='/apartmentnew'> Add an apartment </NavLink>
             </NavItem>
-          }
-          {!logged_in &&
+            }
+                 
+            {!logged_in &&
+              <NavItem>
+                <a href={sign_in_route} className="nav-link" id='signin'>Sign In</a>
+              </NavItem>
+            }
+
+            {!logged_in &&
+              <NavItem>
+                <a href={new_user_route} className="nav-link">Sign Up</a>
+              </NavItem>
+            }
+
             <NavItem>
-              <a href={sign_in_route} className="nav-link">Sign In</a>
+              <NavLink to='/apartmentindex' id='browse'> Browse apartments </NavLink>
             </NavItem>
-          }
-          {!logged_in &&
-            <NavItem>
-              <a href={new_user_route} className="nav-link">Sign Up</a>
-            </NavItem>
-          }
+
         </Nav>
-      </>
+      </header>
     )
   }
 }

@@ -1,0 +1,41 @@
+.header-links{
+    display: flex;
+    justify-content: space-between 10px;
+    align-items: center;
+}
+#applogo{
+    height: 7em;
+    margin-left: 0%;
+    padding-right: 300px;
+}
+
+header {
+    background-color: #ede4e0;
+}
+
+a.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+    padding: 0px;
+}
+
+li.nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#signin {
+    padding-left: 100px;
+}
+
+// #browse {
+//     margin-padding: %;
+// }
+ul.header-links.nav {
+    padding-inline-start: 0%;
+}
+

@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 user = User.where(email: 'user@test.com').first_or_create(password: '12345678', password_confirmation: '12345678')
       
 apartments_array = [
@@ -18,7 +19,7 @@ apartments_array = [
     bedrooms: 4, 
     bathrooms: 3, 
     pets: "Allowed",
-    image: 'https://www.istockphoto.com/photo/home-with-blue-siding-and-stone-fa%C3%A7ade-on-base-of-home-gm1272128530-374495892?phrase=house'
+    image: 'https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
     },
     {
     street: "Collins Ave",
@@ -30,7 +31,7 @@ apartments_array = [
     bedrooms: 2, 
     bathrooms: 1, 
     pets: "Not Allowed",
-    image: 'https://www.istockphoto.com/photo/condos-and-marina-naples-florida-usa-gm1306233018-396871737?phrase=tropical%20apartment'
+    image: 'https://images.unsplash.com/photo-1521111998-ef042c1931fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
     }
 ]
 
