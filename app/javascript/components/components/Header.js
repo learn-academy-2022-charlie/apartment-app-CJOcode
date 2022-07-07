@@ -31,6 +31,12 @@ class Header extends Component {
               <NavLink to='/apartmentnew'> Add an apartment </NavLink>
             </NavItem>
             }
+
+            {logged_in &&     
+            <NavItem>
+              <NavLink to='/myapartments'> My Apartments </NavLink>
+            </NavItem>
+            }
                  
             {!logged_in &&
               <NavItem>

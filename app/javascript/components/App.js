@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
+import ApartmentProtectedIndex from './pages/ApartmentProtectedIndex'
 import ApartmentShow from './pages/ApartmentShow'
 import ApartmentNew from './pages/ApartmentNew'
 import ApartmentEdit from './pages/ApartmentEdit'
@@ -12,6 +13,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+
 
 class App extends Component {
   
@@ -32,6 +34,7 @@ class App extends Component {
   }
 
   render() {
+    const { current_user } = this.props
     return (
       
         <Router>
@@ -40,6 +43,11 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/apartmentindex" 
             render={props => <ApartmentIndex apartments={this.state.apartments}/> }/>
+            
+            <Route path="/myapartments" render={props => {
+              let myApartments = this.state.apartments.filter(apart => apart.user_id === current_user.id)
+              return < ApartmentProtectedIndex apartments = { myApartments } />
+            }} />
             <Route path="/apartmentshow/:id" 
             render= {(props)=>{
             let id = props.match.params.id
